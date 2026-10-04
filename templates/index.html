@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Agent</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">☁</div>
+
+                <div>
+                    <h1>Weather Agent</h1>
+                    <p>Your personal weather assistant</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Online
+            </div>
+        </header>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Welcome Section -->
+            <section class="welcome">
+                <p class="greeting">Hello! 👋</p>
+
+                <h2>
+                    What would you like to know
+                    <span>about the weather?</span>
+                </h2>
+
+                <p class="description">
+                    Ask about current conditions, temperature,
+                    humidity, wind and more.
+                </p>
+            </section>
+
+
+            <!-- Search / Chat Input -->
+            <section class="search-section">
+
+                <div class="input-wrapper">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Ask about a city..."
+                        autocomplete="off"
+                    >
+
+                    <button id="searchButton">
+                        <span>Get Weather</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                </div>
+
+                <p class="input-hint">
+                    Try: "What's the weather in Pune?"
+                </p>
+
+            </section>
+
+
+            <!-- Weather Result -->
+            <section class="weather-card" id="weatherCard">
+
+                <div class="weather-top">
+
+                    <div>
+                        <p class="location-label">CURRENT WEATHER</p>
+
+                        <h3 id="location">
+                            Pune, India
+                        </h3>
+
+                        <p id="date">
+                            Today
+                        </p>
+                    </div>
+
+                    <div class="weather-icon" id="weatherIcon">
+                        ☀️
+                    </div>
+
+                </div>
+
+
+                <div class="temperature-section">
+
+                    <div class="temperature">
+                        <span id="temperature">25</span>
+                        <span class="degree">°C</span>
+                    </div>
+
+                    <div>
+                        <p class="condition" id="condition">
+                            Clear Sky
+                        </p>
+
+                        <p class="feels-like">
+                            Feels like <span id="feelsLike">27</span>°C
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Weather Details -->
+
+                <div class="weather-details">
+
+                    <div class="detail-card">
+                        <span class="detail-icon">💧</span>
+
+                        <div>
+                            <p>Humidity</p>
+                            <strong id="humidity">77%</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="detail-card">
+                        <span class="detail-icon">💨</span>
+
+                        <div>
+                            <p>Wind Speed</p>
+                            <strong id="windSpeed">10 km/h</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="detail-card">
+                        <span class="detail-icon">🌧️</span>
+
+                        <div>
+                            <p>Precipitation</p>
+                            <strong id="precipitation">0 mm</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Agent Message -->
+
+            <div class="agent-message" id="agentMessage">
+
+                <div class="agent-avatar">
+                    ✨
+                </div>
+
+                <div>
+                    <strong>Weather Agent</strong>
+
+                    <p id="agentText">
+                        Enter a city above and I'll fetch its
+                        latest weather information for you.
+                    </p>
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- Footer -->
+
+        <footer class="footer">
+            <p>
+                Weather data provided by Open-Meteo
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
